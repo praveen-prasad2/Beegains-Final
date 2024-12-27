@@ -88,7 +88,22 @@ document.addEventListener("DOMContentLoaded", (event) => {
           },
         });
         return scrollTweenObject;
+      },
+      screen1: function () {
+        var screen1 = new TimelineMax();
+        screen1
+          .fromTo(
+            "#line1_1",
+            { drawSVG: "0%" },
+            { drawSVG: "100%", duration: 400 }
+          )
+          .fromTo(
+            "#line1_2",
+            { drawSVG: "0%" },
+            { drawSVG: "100%", duration: 600 }
+          );
+        self.desktop.animations[1] = screen1;
+        return screen1;
       }
-      
     
     }}
