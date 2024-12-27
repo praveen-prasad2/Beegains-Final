@@ -5,7 +5,16 @@
   overflow: hidden;
 }
 
+body.scrollPathDisabled{
+  overflow: scroll;
+}
+
+body.scrollPathDisabled{
+  overflow: visible;
+}
+
 #world {
+  /* position: absolute; */
   height: auto;
   will-change: transform;
   transform-origin: 50.2769vw 0 0;
@@ -46,6 +55,7 @@
 
 .screen1 {
   position: relative;
+  width: 100vw;
 }
 
 .screen1__logo {
@@ -63,4 +73,11 @@
   position: absolute;
   top: 18.844rem;
   left: 28.726rem;
+}
+
+.screen2{
+  position: absolute;
+  width: 100rem;
+  left:22rem;
+  top: 50rem;
 }
