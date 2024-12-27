@@ -53,6 +53,12 @@
   left: 20rem;
   top: 20rem;
 }
+
+.screen1__video{
+  position: absolute;
+  left: 80rem;
+  top: 5rem;
+}
 .screen1__line-1 {
   position: absolute;
   top: 18.844rem;
