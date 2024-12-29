@@ -314,6 +314,15 @@ function Grow() {
             self.desktop.animations[9] = screen9;
             return screen9;
         },
+        screen10: function () {
+            var screen10 = new TimelineMax();
+            screen10
+                .fromTo("#line10_1", { drawSVG: "0%" }, { drawSVG: "100%", duration: 250 })
+                .fromTo("#line10_2", { drawSVG: "0%" }, { drawSVG: "100%", duration: 250 })
+                .fromTo("#line10_3", { drawSVG: "0%" }, { drawSVG: "100%", duration: 500 });
+            self.desktop.animations[10] = screen10;
+            return screen10;
+        },
        
         registerAnimations: function () {
             var master = gsap.timeline({
@@ -336,7 +345,7 @@ function Grow() {
             var screen7 = self.desktop.screen7();
             var screen8 = self.desktop.screen8();
             var screen9 = self.desktop.screen9();
-           
+            var screen10 = self.desktop.screen10();
             screen1.duration(200);
             screen2.duration(1250);
             screen3.duration(1000);
@@ -346,9 +355,9 @@ function Grow() {
             screen7.duration(700);
             screen8.duration(200);
             screen9.duration(2600);
-           
+            screen10.duration(350);
             var buffer = new TimelineMax();
-            buffer.fromTo(".screen9", {}, { duration: 1000 });
+            buffer.fromTo(".screen10", {}, { duration: 1000 });
             buffer.duration(200);
             master.add(screen1, "screen1");
             master.add(screen2, "screen2");
@@ -359,6 +368,7 @@ function Grow() {
             master.add(screen7, "screen7");
             master.add(screen8, "screen8");
             master.add(screen9, "screen9");
+            master.add(screen10, "screen10");
             master.add(buffer, "buffer");
         },
         killAnimations: function () {

@@ -72,12 +72,31 @@ body.scrollPathDisabled{
 .screen1__line-1 {
   position: absolute;
   top: 18.844rem;
-  left: 28.726rem;
+  left: 18.726rem;
 }
+
+.screen1__line-2 {
+  position: absolute;
+  top: 18.844rem;
+  left: 18.726rem;
+}
+
 
 .screen2{
   position: absolute;
-  width: 100rem;
+  width: 100vw;
   left:22rem;
   top: 50rem;
+}
+
+.screen3{
+  width: 100vw;
+}
+
+.screen4{
+  width: 100vw;
+}
+
+.screen5{
+  width: 100vw;
 }
