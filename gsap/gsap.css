@@ -139,6 +139,12 @@ body.scrollPathDisabled #viewport {
   top: -2.255rem;
 }
 
+.screen2__line-2 {
+  position: absolute;
+  left: 20.460rem;
+  top: -2.255rem;
+}
+
 .screen2-who {
   color: #fff;
   position: relative;
