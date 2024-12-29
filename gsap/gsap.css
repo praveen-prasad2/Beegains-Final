@@ -5,11 +5,11 @@
   overflow: hidden;
 }
 
-body.scrollPathDisabled{
+body.scrollPathDisabled {
   overflow: scroll;
 }
 
-body.scrollPathDisabled #viewport{
+body.scrollPathDisabled #viewport {
   overflow: visible;
 }
 
@@ -48,14 +48,10 @@ body.scrollPathDisabled #viewport{
   opacity: 1;
 }
 
-
-
 .show-path #scroll-path-svg {
   z-index: 5;
   opacity: 1;
 }
-
-
 
 .screen1 {
   position: relative;
@@ -65,7 +61,7 @@ body.scrollPathDisabled #viewport{
 .screen1__content {
   display: block;
   width: 100%;
-  padding-bottom: 50.0625%;
+  padding-bottom: 47.1625%;
   position: relative;
 }
 
@@ -75,7 +71,7 @@ body.scrollPathDisabled #viewport{
   top: 20rem;
 }
 
-.screen1-text1{
+.screen1-text1 {
   font-size: 2.555rem;
   font-weight: 500;
   position: absolute;
@@ -83,22 +79,22 @@ body.scrollPathDisabled #viewport{
   left: 30rem;
 }
 
-.screen1-text2{
+.screen1-text2 {
   position: absolute;
-  font-size: 1.700rem;
+  font-size: 1.7rem;
   left: 40rem;
   top: 15.2rem;
 }
 
-.screen1-text3{
-  font-size:2.555rem;
+.screen1-text3 {
+  font-size: 2.555rem;
   font-weight: 600;
   position: absolute;
   top: 22rem;
   left: 45rem;
 }
 
-.screen1__video{
+.screen1__video {
   position: absolute;
   left: 70rem;
   top: 5rem;
@@ -116,22 +112,56 @@ body.scrollPathDisabled #viewport{
   left: 25.726rem;
 }
 
+.screen2 {
+  position: relative;
+  left: 22rem;
+  width: 100vw;
 
-.screen2{
+  /* top: 80rem; */
+}
+
+.screen2__content {
+  display: block;
+  width: 100%;
+  padding-bottom: 40.78%;
+  position: relative;
+  overflow: hidden;
+}
+
+.vision-background {
   position: absolute;
-  width: 100vw;
-  left:22rem;
-  top: 80rem;
+  width: 100rem;
 }
 
-.screen3{
+.screen2__line-1 {
+  position: absolute;
+  left: 29.460rem;
+  top: -2.255rem;
+}
+
+.screen2-who {
+  color: #fff;
+  position: relative;
+  font-size: 1.2rem;
+  font-weight: 500;
+  left: 3rem;
+  top: 3rem;
+}
+
+.screen2-main-content {
+  position: relative;
+  top: 9.2rem;
+  left: 18rem;
+}
+
+.screen3 {
   width: 100vw;
 }
 
-.screen4{
+.screen4 {
   width: 100vw;
 }
 
-.screen5{
+.screen5 {
   width: 100vw;
 }
