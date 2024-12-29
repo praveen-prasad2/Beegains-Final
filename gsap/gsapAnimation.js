@@ -346,7 +346,7 @@ function Grow() {
             var screen8 = self.desktop.screen8();
             var screen9 = self.desktop.screen9();
             var screen10 = self.desktop.screen10();
-            screen1.duration(200);
+            screen1.duration(400);
             screen2.duration(1250);
             screen3.duration(1000);
             screen4.duration(1100);

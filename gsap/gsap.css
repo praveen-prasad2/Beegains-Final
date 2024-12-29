@@ -9,7 +9,7 @@ body.scrollPathDisabled{
   overflow: scroll;
 }
 
-body.scrollPathDisabled{
+body.scrollPathDisabled #viewport{
   overflow: visible;
 }
 
@@ -55,15 +55,47 @@ body.scrollPathDisabled{
   opacity: 1;
 }
 
+
+
 .screen1 {
   position: relative;
   width: 100vw;
+}
+
+.screen1__content {
+  display: block;
+  width: 100%;
+  padding-bottom: 50.0625%;
+  position: relative;
 }
 
 .screen1__logo {
   position: absolute;
   left: 10rem;
   top: 20rem;
+}
+
+.screen1-text1{
+  font-size: 2.555rem;
+  font-weight: 500;
+  position: absolute;
+  top: 12rem;
+  left: 30rem;
+}
+
+.screen1-text2{
+  position: absolute;
+  font-size: 1.700rem;
+  left: 40rem;
+  top: 15.2rem;
+}
+
+.screen1-text3{
+  font-size:2.555rem;
+  font-weight: 600;
+  position: absolute;
+  top: 22rem;
+  left: 45rem;
 }
 
 .screen1__video{
@@ -79,8 +111,9 @@ body.scrollPathDisabled{
 
 .screen1__line-2 {
   position: absolute;
-  top: 18.844rem;
-  left: 18.726rem;
+  width: 80rem;
+  top: 33.144rem;
+  left: 25.726rem;
 }
 
 
@@ -88,7 +121,7 @@ body.scrollPathDisabled{
   position: absolute;
   width: 100vw;
   left:22rem;
-  top: 50rem;
+  top: 80rem;
 }
 
 .screen3{
