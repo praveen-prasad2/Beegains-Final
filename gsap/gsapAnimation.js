@@ -314,109 +314,7 @@ function Grow() {
             self.desktop.animations[9] = screen9;
             return screen9;
         },
-        screen10: function () {
-            var screen10 = new TimelineMax();
-            screen10
-                .fromTo("#line10_1", { drawSVG: "0%" }, { drawSVG: "100%", duration: 250 })
-                .fromTo("#line10_2", { drawSVG: "0%" }, { drawSVG: "100%", duration: 250 })
-                .fromTo("#line10_3", { drawSVG: "0%" }, { drawSVG: "100%", duration: 500 });
-            self.desktop.animations[10] = screen10;
-            return screen10;
-        },
-        screen11: function () {
-            var screen11 = new TimelineMax();
-            screen11.cleanUpObjects = [];
-            screen11.fromTo("#line11_1", { drawSVG: "0%" }, { drawSVG: "100%", duration: 250 }).add("kpisStart").fromTo("#line11_2", { drawSVG: "0%" }, { drawSVG: "100%", duration: 700 });
-            var eachKPIDelay = 75;
-            var kpisList = document.querySelectorAll(".screen11__kpi");
-            kpisList.forEach(function (kpi, index) {
-                var startTime = Math.floor(index / 2) * eachKPIDelay;
-                var startLabel = "kpisStart+=" + startTime;
-                var kpiPaths = kpi.querySelectorAll(".screen11__kpi__icon path");
-                var fillPathsWhite = kpi.querySelectorAll('.screen11__kpi__icon [fill="#fff"], .screen11__kpi__icon [fill="#ffffff"]');
-                var fillPathsBlue = kpi.querySelectorAll('.screen11__kpi__icon [fill="#ffc107"]');
-                screen11
-                    .fromTo(kpiPaths, { drawSVG: "0%" }, { drawSVG: "100%", duration: 25 }, startLabel)
-                    .fromTo(fillPathsBlue, { fill: "#ffffff" }, { fill: "#ffc107", duration: 25 }, startLabel)
-                    .fromTo(fillPathsWhite, { fill: "none" }, { fill: "#ffffff", duration: 25 }, startLabel);
-                kpiPaths.forEach(function (item, index) {
-                    screen11.cleanUpObjects.push(item);
-                });
-                fillPathsWhite.forEach(function (item, index) {
-                    screen11.cleanUpObjects.push(item);
-                });
-                fillPathsBlue.forEach(function (item, index) {
-                    screen11.cleanUpObjects.push(item);
-                });
-            });
-            self.desktop.animations[11] = screen11;
-            return screen11;
-        },
-        screen12: function () {
-            var screen12 = new TimelineMax();
-            screen12.cleanUpObjects = [];
-            screen12.fromTo("#line12_1", { drawSVG: "0%" }, { drawSVG: "100%", duration: 25 }).fromTo("#line12_2", { drawSVG: "0%" }, { drawSVG: "100%", duration: 100 });
-            var kpisList = document.querySelectorAll(".screen12__kpi");
-            kpisList.forEach(function (kpi, index) {
-                var kpiPaths = kpi.querySelectorAll(".screen12__kpi__icon path");
-                var fillPathsWhite = kpi.querySelectorAll('.screen12__kpi__icon [fill="#fff"], .screen12__kpi__icon [fill="#ffffff"]');
-                var fillPathsBlue = kpi.querySelectorAll('.screen12__kpi__icon [fill="#ffc107"]');
-                var lineSelector = "#line12_" + (index + 3);
-                var kpiLabel = "scr11Kpi" + index;
-                var lineDuration = 75;
-                if (index == kpisList.length - 1) {
-                    lineDuration = 175;
-                }
-                screen12
-                    .add(kpiLabel)
-                    .fromTo(kpiPaths, { drawSVG: "0%" }, { drawSVG: "100%", duration: 25 })
-                    .fromTo(fillPathsBlue, { fill: "#ffffff" }, { fill: "#ffc107", duration: 25 }, kpiLabel)
-                    .fromTo(fillPathsWhite, { fill: "#ffc107" }, { fill: "#ffffff", duration: 25 }, kpiLabel)
-                    .fromTo(lineSelector, { drawSVG: "0%" }, { drawSVG: "100%", duration: lineDuration });
-                if (index == kpisList.length - 1) {
-                    screen12.fromTo(lineSelector + "_fill", { fill: "#ffc107" }, { fill: "#ffbd62", duration: 25 }, "-=75");
-                }
-                kpiPaths.forEach(function (item, index) {
-                    screen12.cleanUpObjects.push(item);
-                });
-                fillPathsWhite.forEach(function (item, index) {
-                    screen12.cleanUpObjects.push(item);
-                });
-                fillPathsBlue.forEach(function (item, index) {
-                    screen12.cleanUpObjects.push(item);
-                });
-                screen12.cleanUpObjects.push(lineSelector);
-            });
-            screen12.fromTo(".screen12", {}, { duration: 75 });
-            self.desktop.animations[12] = screen12;
-            return screen12;
-        },
-        screen13: function () {
-            var screen13 = new TimelineMax();
-            screen13
-                .fromTo("#line13_1", { drawSVG: "0%" }, { drawSVG: "100%", duration: 50 })
-                .fromTo("#line13_2", { drawSVG: "0%" }, { drawSVG: "100%", duration: 200 })
-                .fromTo("#line13_3", { drawSVG: "0%" }, { drawSVG: "100%", duration: 700 });
-            screen13.fromTo(".screen13", {}, { duration: 50 });
-            self.desktop.animations[13] = screen13;
-            return screen13;
-        },
-        screen14: function () {
-            var screen14 = new TimelineMax();
-            screen14.fromTo("#line14_1", { drawSVG: "0%" }, { drawSVG: "100%", duration: 100 }).fromTo("#line14_2", { drawSVG: "0%" }, { drawSVG: "100%", duration: 900 });
-            self.desktop.animations[14] = screen14;
-            return screen14;
-        },
-        screen15: function () {
-            var screen15 = new TimelineMax();
-            screen15
-                .fromTo("#line15_1", { drawSVG: "0%" }, { drawSVG: "100%", duration: 75 })
-                .fromTo("#line15_2", { drawSVG: "0%" }, { drawSVG: "100%", duration: 825 })
-                .fromTo("#line15_4", { drawSVG: "0%", fill: "#ffc107" }, { drawSVG: "100%", fill: "#ffbd62", duration: 100 });
-            screen15.cleanUpObjects = ["#line15_4"];
-            self.desktop.animations[15] = screen15;
-            return screen15;
-        },
+       
         registerAnimations: function () {
             var master = gsap.timeline({
                 scrollTrigger: {
@@ -438,13 +336,8 @@ function Grow() {
             var screen7 = self.desktop.screen7();
             var screen8 = self.desktop.screen8();
             var screen9 = self.desktop.screen9();
-            var screen10 = self.desktop.screen10();
-            var screen11 = self.desktop.screen11();
-            var screen12 = self.desktop.screen12();
-            var screen13 = self.desktop.screen13();
-            var screen14 = self.desktop.screen14();
-            var screen15 = self.desktop.screen15();
-            screen1.duration(350);
+           
+            screen1.duration(200);
             screen2.duration(1250);
             screen3.duration(1000);
             screen4.duration(1100);
@@ -453,14 +346,9 @@ function Grow() {
             screen7.duration(700);
             screen8.duration(200);
             screen9.duration(2600);
-            screen10.duration(350);
-            screen11.duration(1600);
-            screen12.duration(1250);
-            screen13.duration(2100);
-            screen14.duration(600);
-            screen15.duration(800);
+           
             var buffer = new TimelineMax();
-            buffer.fromTo(".screen15", {}, { duration: 1000 });
+            buffer.fromTo(".screen9", {}, { duration: 1000 });
             buffer.duration(200);
             master.add(screen1, "screen1");
             master.add(screen2, "screen2");
@@ -471,31 +359,7 @@ function Grow() {
             master.add(screen7, "screen7");
             master.add(screen8, "screen8");
             master.add(screen9, "screen9");
-            master.add(screen10, "screen10");
-            master.add(screen11, "screen11");
-            master.add(screen12, "screen12");
-            master.add(screen13, "screen13");
-            master.add(screen14, "screen14");
-            master.add(screen15, "screen15");
             master.add(buffer, "buffer");
-            master.fromTo(
-                ".contact-options",
-                {
-                    xPercent: -100,
-                    onStart: function () {
-                        gsap.set(".contact-options", { className: "contact-options anim-initialized" });
-                    },
-                },
-                { xPercent: 0, duration: 100 },
-                "screen2+=10"
-            );
-            self.desktop.master = master;
-            self.desktop.animationActive = !0;
-            if (document.body.className.indexOf("laInit") !== -1) {
-                document.body.className += " laInit";
-            }
-            document.body.classList.add("laInit");
-            return master;
         },
         killAnimations: function () {
             if (self.desktop.scrollTweenObject != null) {
@@ -847,259 +711,10 @@ function Grow() {
             });
             self.mobile.animationActive = !1;
         },
-    }),
-        (this.contact = {
-            activeTab: 1,
-            popUpOpen: !1,
-            popUp: !1,
-            // init: function () {
-            //     self.contact.registerEvents();
-            // },
-            showPopUp: function () {
-                self.contact.popUpOpen = !0;
-                $("#contact-popup").addClass("open");
-                setTimeout(function () {
-                    $(".contact-popup__field__each[data-tab=1]").find(".contact-popup__field__input").eq(0).focus();
-                }, 300);
-            },
-            closePopUp: function () {
-                self.contact.popUpOpen = !1;
-                $("#contact-popup").removeClass("open");
-                setTimeout(function () {
-                    if (self.contact.activeTab != 1) {
-                        $(".contact-popup__fields").attr("data-active", 1);
-                        $(".contact-popup__field__each").removeClass("done").removeClass("active");
-                        $(".contact-popup__field__each[data-tab=1]").removeClass("done").addClass("active");
-                        $(".contact-popup__back").removeClass("active");
-                        $(".contact-popup__next").removeClass("final");
-                        self.contact.activeTab = 1;
-                    }
-                    $(".contact-popup__content").show();
-                    $(".contact-popup__result").hide();
-                }, 300);
-            },
-            goBack: function () {
-                if (self.contact.activeTab != 1) {
-                    self.contact.switchToTab(self.contact.activeTab - 1);
-                }
-            },
-            switchToTab: function (tab) {
-                $(".contact-popup__fields").attr("data-active", tab);
-                var currentTabDiv = $(".contact-popup__field__each.active");
-                var activeTabDiv = $(".contact-popup__field__each[data-tab=" + tab + "]");
-                if (self.contact.activeTab > tab) {
-                    currentTabDiv.removeClass("active");
-                    activeTabDiv.removeClass("done").addClass("active");
-                } else {
-                    currentTabDiv.addClass("done").removeClass("active");
-                    activeTabDiv.addClass("active");
-                }
-                if (tab != 1) {
-                    $(".contact-popup__back").addClass("active");
-                } else {
-                    $(".contact-popup__back").removeClass("active");
-                }
-                if (tab != 5) {
-                    setTimeout(function () {
-                        activeTabDiv.find(".contact-popup__field__input").eq(0).focus();
-                    }, 300);
-                }
-                if (tab == 6) {
-                    $(".contact-popup__next").addClass("final");
-                } else {
-                    $(".contact-popup__next").removeClass("final");
-                }
-                self.contact.activeTab = tab;
-            },
-            submitTab: function () {
-                $(".contact-popup__next__btn").removeClass("field-error");
-                if (self.contact.activeTab == 1) {
-                    var input = $(".contact-popup__field__input[name=name]");
-                    if (input.val().trim() == "") {
-                        input.addClass("error");
-                    } else {
-                        self.contact.switchToTab(2);
-                    }
-                } else if (self.contact.activeTab == 2) {
-                    var input = $(".contact-popup__field__input[name=email]");
-                    var email = input.val();
-                    var isemail = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
-                    var unwantedEmailRegex = /^[a-z0-9](\.?[a-z0-9]){3,}@(g(oogle)?mail)|(hotmail)|(icloud)|(live)|(outlook)\.com$/i;
-                    var isUnwanted = unwantedEmailRegex.test(email);
-                    var formResult = $("#growthStrategyForm").find(".form-result");
-                    if (!isemail) {
-                        input.addClass("error");
-                    } 
-                    // else if (isUnwanted) {
-                    //     input.addClass("error");
-                    //     formResult.html("We're more likely to reply if you enter a work email address :)");
-                    //     formResult.addClass("field-error").slideDown(300);
-                    //     $(".contact-popup__next__btn").addClass("field-error");
-                    // } 
-                    else {
-                        formResult.slideUp(300);
-                        self.contact.switchToTab(3);
-                    }
-                } else if (self.contact.activeTab == 3) {
-                    var input = $(".contact-popup__field__input[name=phone]");
-                    var phoneNumber = input.val();
-                    var isnum = /^((\+[1-9]{1,4}[ \-]*)|(\([0-9]{2,3}\)[ \-]*)|([0-9]{2,4})[ \-]*)*?[0-9]{3,4}?[ \-]*[0-9]{3,4}?$/.test(phoneNumber);
-                    if (!isnum) {
-                        input.addClass("error");
-                    } else {
-                        self.contact.switchToTab(4);
-                    }
-                } 
-                // else if (self.contact.activeTab == 4) {
-                //     var input = $(".contact-popup__field__input[name=company]");
-                //     if (input.val().trim() == "") {
-                //         input.addClass("error");
-                //     } else {
-                //         self.contact.switchToTab(5);
-                //     }
-                // } 
-                else if (self.contact.activeTab == 4) {
-                    self.contact.switchToTab(6);
-                }
-            },
-            submitForm: function (formElement) {
-                if (self.contact.activeTab != 6) {
-                    return !1;
-                }
-                var form = $(formElement);
-                var formResult = form.find(".form-result");
-                var formContent = form.find(".form-content");
-                var submitBtn = form.find(".submit-btn");
-                formResult.removeClass("field-error").slideUp(300);
-                var data = form.serialize();
-                var original = submitBtn.attr("data-original");
-                        var sending = submitBtn.attr("data-sending");
-                        submitBtn.val(sending);
-                        submitBtn.attr("disabled", "disabled");
-                        var noOfDots = 0;
-                        var dot = ".";
-                        var displayText = "";
-                        var buttonDotInterval = setInterval(function () {
-                            noOfDots = (noOfDots + 1) % 4;
-                            displayText = sending + dot.repeat(noOfDots);
-                            submitBtn.val(displayText);
-                        }, 300);
-                         $.post('https://pingmedia.in/landing/lead.php', data, function (response) {
-                            response = JSON.parse(response);
-                            console.log(response);
-                            formResult.html(response.info);
-                            clearInterval(buttonDotInterval);
-                            if (response.status) {
-                                form[0].reset();
-                                formContent.slideUp(300);
-                            } else {
-                                formResult.addClass("field-error");
-                            }
-                            formResult.slideDown(300);
-                            submitBtn.val(original);
-                            submitBtn.removeAttr("disabled");
-                        });
-                // grecaptcha.ready(function () {
-                //     grecaptcha.execute(captchaSiteKey, { action: "submit" }).then(function (token) {
-                        
-                //         data.grecToken = token;
-                        
-                       
-                //     });
-                // });
-            },
-            registerEvents: function () {
-                if (typeof $ != undefined) {
-                    // var grecaptchaScriptAdded = !1;
-                    // function addGrepcaptchaScript() {
-                    //     if (!grecaptchaScriptAdded) {
-                    //         grecaptchaScriptAdded = !0;
-                    //         var cb = null;
-                    //         var src = "https://www.google.com/recaptcha/api.js?render=" + captchaSiteKey;
-                    //         var jsId = btoa(src);
-                    //         if (!document.getElementById(jsId)) {
-                    //             var ref = window.document.getElementsByTagName("body")[0];
-                    //             var script = window.document.createElement("script");
-                    //             script.id = jsId;
-                    //             script.type = "text/javascript";
-                    //             script.src = src;
-                    //             script.async = !0;
-                    //             ref.appendChild(script);
-                    //             if (cb && typeof cb === "function") {
-                    //                 script.onload = cb;
-                    //             }
-                    //             return script;
-                    //         }
-                    //     } else {
-                    //         $(document).off("focus", "form", addGrepcaptchaScript);
-                    //     }
-                    // }
-                    // $(document).on("focus", "form", addGrepcaptchaScript);
-                    $(document).on("click", ".show-contact-cta", function (e) {
-                        var screen = $(this).attr("data-screen");
-                        var text = $(this).text();
-                        if (typeof screen != "undefined") {
-                            $('#growthStrategyForm [name="fromScreen"]').val(screen);
-                        } else {
-                            $('#growthStrategyForm [name="fromScreen"]').val("");
-                        }
-                        if (typeof text != "undefined") {
-                            text = text.trim();
-                            $('#growthStrategyForm [name="linkText"]').val(text);
-                        } else {
-                            $('#growthStrategyForm [name="linkText"]').val("");
-                        }
-                        self.contact.showPopUp();
-                    });
-                    $(document).on("click", ".contact-popup__close", function (e) {
-                        self.contact.closePopUp();
-                    });
-                    $(document).keydown(function (e) {
-                        var keycode = event.keyCode ? event.keyCode : event.which;
-                        if (keycode == "27") {
-                            e.preventDefault();
-                            self.contact.closePopUp();
-                        }
-                    });
-                    $(document).on("click", ".contact-popup__back__btn", function (e) {
-                        self.contact.goBack();
-                    });
-                    $(document).on("click", ".contact-popup__next__btn", function (e) {
-                        self.contact.submitTab();
-                    });
-                    $(document).on("submit", "#growthStrategyForm", function (e) {
-                        e.preventDefault();
-                        self.contact.submitForm(this);
-                    });
-                    $(document).on("focus", ".contact-popup__field__input", function (e) {
-                        $(this).removeClass("error");
-                    });
-                    $(document).keydown(".contact-popup__field__input", function (e) {
-                        var keycode = event.keyCode ? event.keyCode : event.which;
-                        if (keycode == "13") {
-                            if (self.contact.activeTab != 6) {
-                                e.preventDefault();
-                                self.contact.submitTab();
-                            }
-                        }
-                        if (keycode == "9") {
-                            if (self.contact.activeTab != 6) {
-                                e.preventDefault();
-                                self.contact.submitTab();
-                            }
-                        }
-                    });
-                } else {
-                    setTimeout(function () {
-                        //self.contact.registerEvents();
-                    }, 1000);
-                }
-            },
-        });
+    })
 }
 var GrowObj = new Grow();
 GrowObj.desktop.initScrollTween();
-GrowObj.contact.registerEvents();
 var onResize = debounce(function () {
     if (window.innerWidth <= 1120) {
         if (GrowObj.desktop.animationActive) {
