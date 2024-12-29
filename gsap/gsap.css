@@ -14,7 +14,7 @@ body.scrollPathDisabled{
 }
 
 #world {
-  /* position: absolute; */
+  position: absolute;
   height: auto;
   will-change: transform;
   transform-origin: 50.2769vw 0 0;
@@ -47,6 +47,8 @@ body.scrollPathDisabled{
   z-index: 4;
   opacity: 1;
 }
+
+
 
 .show-path #scroll-path-svg {
   z-index: 5;
