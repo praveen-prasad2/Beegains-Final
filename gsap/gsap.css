@@ -120,14 +120,7 @@ body.scrollPathDisabled #viewport {
   
 }
 
-.screen2__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200vw;
-  height: 100%;
-  background: #fff;
-}
+
 
 .screen2__content {
   display: block;
