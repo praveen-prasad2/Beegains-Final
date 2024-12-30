@@ -208,13 +208,30 @@ body.scrollPathDisabled #viewport {
 
 
 .screen3 {
-  width: 100vw;
+  width: 100%;
+  position: relative;
 }
 
-.screen4 {
-  width: 100vw;
+.screen3__content{
+  display: block;
+  width: 100%;
+  padding-bottom: 10rem;
+  position: relative;
 }
 
-.screen5 {
-  width: 100vw;
+.screen3__text1{
+  position: absolute;
+  left: 40rem;
+}
+
+
+.text1__description{
+  width: 55rem;
+}
+
+.screen3__line-1 {
+  position: absolute;
+  top: -8rem;
+  left: 10.874rem;
+  /* z-index: 999; */
 }
