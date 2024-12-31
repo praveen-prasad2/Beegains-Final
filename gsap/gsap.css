@@ -121,23 +121,35 @@ body.scrollPathDisabled #viewport {
 }
 
 
+.screen2__bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200vw;
+  height: 100%;
+  background: #000;
+}
+
 
 .screen2__content {
   display: block;
   width: 100%;
-  padding-bottom: 5%;
+  padding-bottom: 10%;
   position: relative;
   overflow: hidden;
 }
 
-.vision__bg {
+/* .vision__bg {
   display: flex;
   justify-content: end;
   align-items: end;
-}
+} */
 
 .vision-background{
-  width: 110rem;
+  width: 55rem;
+  position: relative;
+  top: 5rem;
+  left: 40rem;
 }
 
 .screen2__title {
